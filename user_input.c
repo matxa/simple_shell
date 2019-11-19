@@ -15,17 +15,19 @@ char *user_input(void)
 	}
 	count_char = getline(&buffer, &bsize, stdin);
 */
-	count_char = _getline(&buffer, bsize);
+	count_char = _getline(&buffer);
 	return (buffer);
 }
 
+/*
 int main(void)
 {
 	char *buffer;
 
 	buffer = user_input();
-	printf("Your input: %s\n", buffer);
+	write(1, buffer, sizeof(buffer));
 
 	free(buffer);
 	return (0);
 }
+*/
