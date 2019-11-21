@@ -12,5 +12,5 @@ char *_strcpy(char *dest, char *src);
 char *user_input(void);
 ssize_t _getline(char **buff);
 void *_realloc(void *ptr, size_t old_size, size_t new_size);
-
+char **tokens(char *buffer);
 #endif
