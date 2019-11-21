@@ -6,7 +6,21 @@
 * Return: return (0) on success
 */
 
-int main(void)
+void main(void)
 {
-	return (0);
+	/* the dollar :)*/
+	char *prompt = "$ ";
+
+	char *buffer;
+	char **cmd;
+
+	while (1)
+	{
+		write(1, prompt, (sizeof(char) * 2));
+		buffer = user_input();
+		cmd = tokens(buffer);
+
+		free(buffer);
+		free(cmd);
+	}
 }
