@@ -6,7 +6,7 @@ void _cmdfinder(char **path_t, char **user_t)
 	char *path;
 	char cp, new;
 
-	while (buffer == 0)
+	while (path != NULL)
 	{
 		path = strtok(path_t, ":");
 		cp = _strcat('/', user_t);
