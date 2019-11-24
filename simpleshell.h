@@ -6,7 +6,8 @@
 #include <unistd.h>
 #include <sys/stat.h>
 #include <sys/wait.h>
-
+char *_strcat(char *dest, char *src);
+int _strlen(char *s);
 int n_strlen(char *str);
 char *n_strtoke(char *str, const char *delim);
 char *_strcpy(char *dest, char *src);
