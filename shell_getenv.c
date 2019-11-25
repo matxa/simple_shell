@@ -32,3 +32,25 @@ char *_getenv(char *var_name)
 	return (NULL);
 }
 
+/*char *_getenv(char *var_name)
+{
+	int i;
+
+	for (i = 0; environ[i]; i++)
+	{
+		if ((_strcmp(var_name, environ[i], 5)) == 0)
+		{
+			return (&environ[i][5]);
+		}
+	}
+	return (NULL);
+}*/
+
+/*int main(void)
+{
+	char *buffer = _getenv("PATH");
+
+	printf("%s\n", buffer);
+
+	return (0);
+}*/

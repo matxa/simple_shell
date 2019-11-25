@@ -9,54 +9,44 @@
 
 extern char** environ;
 
-
 int run(char **args)
 {
-	int status;
+	int status, i;
 	pid_t pid;
-	pid_t wait_for_child;
-	int i;
 	/*char *buffer = tokens(args);*/
 	char *buffer = _getenv("PATH");
 	char *path = malloc(sizeof(char) * 1024);
 	char *cp = malloc(sizeof(char) * 1024);
 	char *new = malloc(sizeof(char) * 1024);
 	/* creating a child processes */
-	printf("args -> %s\n", *args);
-	printf("buffer -> %s\n", buffer);
 
 	pid = fork();
 	if (pid == 0)
 	{
 		path = strtok(buffer, ":");
-		printf("path -> %s\n", path);
-		printf("%s\n", "forking");
 		/*cp = strcat(*args, "/");
 		printf("cp -> %s <- the slash\n", cp);*/
+		cp = str_concat("/", *args);
 		while (path)
 		{
-			cp = strcat("/", *args);
-			printf("cp -> %s <- the slash\n", cp);
-			printf("%s\n", "we in the while loop :)");
-			new = strcat(path, cp);
-			printf("new -> %s\n", new);
-
-			if (access(new, (R_OK | X_OK)) == 0)
+			new = str_concat(path, cp);
+			printf("new -> [%s]\n", new);
+			for (i = 0; args[i]; i++)
 			{
-				printf("%s\n", "exec");
+				printf("args[%d] -> [%s]\n",i,args[i]);
+			}
+			if ((access(new, X_OK || R_OK)) == 0)
+			{
+				printf("%s", "execve");
 				execve(new, args, environ);
+				break;
 			}
 			path = strtok(NULL, ":");
-			i++;
-			printf("the loop runs %d times!", i);
 		}
+		free(args);
 	}
-	else
-	{
-		printf("%s\n", "we in the parent process :)");
-		wait_for_child = waitpid(pid, &status, 0);
-	}
-
+	printf("%s\n", "we in the parent process :)");
+	waitpid(pid, &status, 0);
 	return (1);
 }
 
