@@ -7,8 +7,8 @@
  */
 void _exit(int argc, char **argv)
 {
-	if (argv[0] == "exit")
-	{
+	if (strcmp(argv[0], "exit"))
+	{`
 		free(argv);
 		exit(EXIT_SUCCESS);
 	}
