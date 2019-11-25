@@ -18,15 +18,34 @@ char **tokens(char *buffer)
 		exit(-1);
 
 	token = strtok(buffer, " ");
-
+	printf("token -> %s\n", token);
 	for (i = 0; token != NULL; i++)
 	{
-		hold_tokens[i] == token;
-
+		hold_tokens[i] = token;
+		printf("hold_tokens[%d] -> %s\n", i, hold_tokens[i]);
 		token = strtok(NULL, " ");
+		printf("next token -> %s\n", token);
 	}
 
 	hold_tokens[i] == NULL;
-
+	printf("last ld_tokens -> %s\n", hold_tokens[i]);
 	return (hold_tokens);
 }
+
+/*int main(void)
+{
+	char *buffer;
+	char **cmd;
+	int i;
+
+	buffer = user_input();
+	printf("buffer -> %s\n", buffer);
+	cmd = tokens(buffer);
+
+	for (i = 0; i < cmd[i + 1]; i++)
+	{
+		printf("cmd[%d] -> %s\n", i, cmd[i]);
+		break;
+	}
+	return (1);
+}*/
