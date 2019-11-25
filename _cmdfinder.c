@@ -11,7 +11,7 @@ void _cmdfinder(char **path_t, char **user_t)
 		path = strtok(path_t, ":");
 		cp = _strcat('/', user_t);
 		new = _strcat(path_t, user_t);
-		if (access(new, F_OK) == 0);
+		if (access(new, (R_OK | X_OK)) == 0);
 		execve(new, user_t, environ);
 	}
 }
