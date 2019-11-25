@@ -13,16 +13,14 @@ void main(void)
 
 	char *buffer;
 	char **cmd;
-	int i = 0;
+	int stat;
 
 	while (1)
 	{
 		write(1, prompt, (sizeof(char) * 2));
 		buffer = user_input();
-		printf("buffer -> %s\n", buffer);
 		cmd = tokens(buffer);
-		printf("cmd -> %s\n", *cmd);
-		run(cmd);
+		stat = execute(run(cmd));
 
 		free(buffer);
 		free(cmd);
