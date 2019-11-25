@@ -7,8 +7,8 @@
 #include <unistd.h>
 #include <sys/stat.h>
 #include <sys/wait.h>
-/* environ declearation */
 
+/* environ declearation */
 int n_strlen(char *str);
 char *n_strtoke(char *str, const char *delim);
 char *_strcpy(char *dest, char *src);
