@@ -1,0 +1,43 @@
+SIMPLE SHELL "1" "0.00" "simple shell man page"
+.SH NAME
+.hsh - simple shell implementation
+.SH SYNOPSIS
+.br
+.RS
+.B .hsh
+.I FORMAT [ARGUMENT]...
+.br
+.B .hsh
+.I OPTIONS
+.br
+.RE
+.SH DESCRIPTION
+.br
+The simple shell is a program that alongside the terminal facilitates the interaction between the operating system and the keyboard (user input). It works like a command line interface, including certain commands to help navigate files and directory as well as take care of processes underneath the hood.
+.SH COMMAND TYPES
+.RS
+.br
+cd: prin
+.br
+i: 
+prints an integer
+.br
+s: 
+prints a string
+.br
+c:
+prints a charater
+.br
+%:
+prints a percent sign
+.RE
+.SH SEE ALSO
+.br
+.I printf(3), sh(1), echo(1), builtin(1)
+.SH BUGS
+.br
+Some issues may arise when trying to format integers with options %d or %i, when the integer is larger than 99. 
+.SH AUTHORS
+.br
+McKiernan, Kathleen and Espinoza, Flavio
+
