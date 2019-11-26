@@ -19,9 +19,9 @@ int main(void)
 		write(1, prompt, (sizeof(char) * 2));
 		buffer = user_input();
 		cmd = tokens(buffer);
-		run(cmd);
+		_execute(cmd);
 
-		free(buffer);
-		free(cmd);
+		/* free(buffer);*/
+		/* free(cmd);*/
 	}
 }
