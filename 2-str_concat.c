@@ -1,12 +1,10 @@
 #include "simpleshell.h"
-
 /**
  * str_concat - concatenates two strings
  * @s1: string one
  * @s2: string two
  * Return: ptr
  */
-
 char *str_concat(char *s1, char *s2)
 {
 	/* declare your variables */
@@ -38,9 +36,7 @@ char *str_concat(char *s1, char *s2)
 	while (count < begs)
 	{
 		if (count < len1)
-		{
 			cat[count] = s1[count];
-		}
 		else
 		{
 			cat[count] = s2[len2];
