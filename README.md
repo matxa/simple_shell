@@ -1,3 +1,5 @@
+![simple_shell](https://i.imgur.com/1qxIw3q.png)
+
 # Shell Project `(simple Shell)`
 
 By Marcelo R-M, and Flavio
@@ -39,6 +41,40 @@ By Marcelo R-M, and Flavio
 - ### Builtins
 
   A builtin command is a Linux/Unix command which is "* built into a shell interpreter * such as sh, ksh, bash, etc.
+
+  
+
+  ```c
+  #include "simpleshell.h"
+  
+  /**
+  * main - main shell function, where the magic happens
+  * takes in no arg
+  * Return: return (0) on success
+  */
+  
+  int main(void)
+  {
+  	/* the dollar :)*/
+  	char *prompt = "$ ";
+  
+  	char *buffer;
+  	char **cmd;
+  
+  	while (1)
+  	{
+  		write(1, prompt, (sizeof(char) * 2));
+  		buffer = user_input();
+  		cmd = tokens(buffer);
+  		_execute(cmd);
+  
+  		/* free(buffer);*/
+  		/* free(cmd);*/
+  	}
+  }
+  ```
+
+  
 
   
 
