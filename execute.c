@@ -1,15 +1,5 @@
 #include "simpleshell.h"
 /**
- * shell_exit - exits process
- * @argv: prompt vector
- * Return: some return
- */
-void shell_exit(char **argv)
-{
-	free(argv);
-	exit(EXIT_SUCCESS);
-}
-/**
  * _execute - filters if builtin or not
  * @args: user input
  * Return: run(cmd)
