@@ -24,7 +24,7 @@ int run(char **args)
 		cp = str_concat("/", *args);
 		while (path)
 		{
-			if (strchr(*args, '/') != NULL)
+			if (_strchr(*args, '/') != NULL)
 				execve(*args, args, environ);
 
 			new = str_concat(path, cp);

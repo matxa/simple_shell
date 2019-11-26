@@ -8,7 +8,9 @@
 #include <sys/stat.h>
 #include <sys/wait.h>
 /* environ declearation */
+extern char **environ;
 
+char *_strchr(char *s, char c);
 int n_strlen(char *str);
 char *n_strtoke(char *str, const char *delim);
 char *_strcpy(char *dest, char *src);

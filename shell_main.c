@@ -18,9 +18,7 @@ int main(void)
 	{
 		write(1, prompt, (sizeof(char) * 2));
 		buffer = user_input();
-		printf("buffer -> %s\n", buffer);
 		cmd = tokens(buffer);
-		printf("cmd -> %s\n", *cmd);
 		run(cmd);
 
 		free(buffer);
