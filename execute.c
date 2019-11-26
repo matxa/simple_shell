@@ -33,7 +33,7 @@ int _execute(char **args)
 	switch (type)
 	{
 		case (1):
-			_getenv(*args);		
+			_getenv(*args);
 			break;
 		case (2):
 			shell_exit(args);
