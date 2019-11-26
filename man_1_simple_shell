@@ -1,4 +1,4 @@
-SIMPLE SHELL "1" "0.00" "simple shell man page"
+.TH HSH 1 “26 November 2019” “Version 1.0" “General Commands Manual”\
 .SH NAME
 .hsh - simple shell implementation
 .SH SYNOPSIS
@@ -39,5 +39,4 @@ prints a percent sign
 Some issues may arise when trying to format integers with options %d or %i, when the integer is larger than 99. 
 .SH AUTHORS
 .br
-McKiernan, Kathleen and Espinoza, Flavio
-
+Flavio Espinoza, Marcelo Martins
