@@ -6,9 +6,6 @@
 * Return: char*
 *
 */
-
-extern char **environ;
-
 char *_getenv(char *var_name)
 {
 	char **env;
