@@ -20,7 +20,7 @@ char *str_concat(char *s1, char *s2)
 		s2 = "";
 
 	/* find length of strings */
-	while(s1[len1] != '\0')
+	while (s1[len1] != '\0')
 		len1++;
 	while (s2[len2] != '\0')
 		len2++;
@@ -51,27 +51,3 @@ char *str_concat(char *s1, char *s2)
 	cat[count] = '\0';
 	return (cat);
 }
-
-/*
-#include <stdio.h>
-#include <stdlib.h>
-
- * main - check the code for Holberton School students.
- *
- * Return: Always 0.
- *
-int main(void)
-{
-    char *s;
-
-    s = str_concat("Betty ", "Holberton");
-    if (s == NULL)
-    {
-        printf("failed\n");
-        return (1);
-    }
-    printf("%s\n", s);
-    free(s);
-    return (0);
-}
-*/
