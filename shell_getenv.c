@@ -7,7 +7,7 @@
 *
 */
 
-extern char** environ;
+extern char ** environ;
 
 char *_getenv(char *var_name)
 {
