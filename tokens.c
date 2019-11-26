@@ -1,11 +1,9 @@
 #include "simpleshell.h"
-
 /**
 * tokens - puts tokens in an array
 * @buffer: the line read from input
 * Return: tokens
 */
-
 char **tokens(char *buffer)
 {
 	int buffer_size = 1024;
