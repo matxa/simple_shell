@@ -1,4 +1,4 @@
-.TH HSH 1 “26 November 2019” “Version 1.0" “General Commands Manual"
+.TH HSH 1 "Version 1.0" "26 NOV 2019 "General Commands Manual" 
 .SH NAME
  .hsh - simple shell implementation
 .SH SYNOPSIS
