@@ -12,7 +12,7 @@ char **tokens(char *buffer)
 	char **hold_tokens;
 	int i = 0;
 
-	hold_tokens = malloc(sizeof(char*) * buffer_size);
+	hold_tokens = malloc(sizeof(char *) * buffer_size);
 	if (hold_tokens == NULL)
 		exit(-1);
 
