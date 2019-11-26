@@ -1,6 +1,5 @@
 #ifndef SIMPLESHELL_H
 #define SIMPLESHELL_H
-
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -10,7 +9,10 @@
 /* environ declaration */
 extern char **environ;
 
+void shell_env(char **args);
+void shell_exit(char **argv);
 char *_strchr(char *s, char c);
+int _execute(char **args);
 int n_strlen(char *str);
 char *n_strtoke(char *str, const char *delim);
 char *_strcpy(char *dest, char *src);
