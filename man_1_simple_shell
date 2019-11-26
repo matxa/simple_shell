@@ -1,6 +1,6 @@
-.TH HSH 1 “26 November 2019” “Version 1.0" “General Commands Manual”\
+.TH HSH 1 “26 November 2019” “Version 1.0" “General Commands Manual"
 .SH NAME
-.hsh - simple shell implementation
+ .hsh - simple shell implementation
 .SH SYNOPSIS
 .br
 .RS
@@ -9,34 +9,138 @@
 .br
 .B .hsh
 .I OPTIONS
-.br
 .RE
 .SH DESCRIPTION
-.br
 The simple shell is a program that alongside the terminal facilitates the interaction between the operating system and the keyboard (user input). It works like a command line interface, including certain commands to help navigate files and directory as well as take care of processes underneath the hood.
-.SH COMMAND TYPES
+.SH OPTIONS
+There are currently no implementations for options for the shell. However, the .sh program takes the following options
+.PP
+.B -i
 .RS
-.br
-cd: prin
-.br
-i: 
-prints an integer
-.br
-s: 
-prints a string
-.br
-c:
-prints a charater
-.br
-%:
-prints a percent sign
+interactive mode
 .RE
+.PP
+.B -l
+.RS
+non-interactive mode
+.RE
+.PP
+.B -r
+.RS
+restricted mode
+.RE
+.SH INVOCATION
+.PP
+These modes define different environments for the shell. For example, in interactive mode, the prompt will always display and return as well as handle errors. The non-interactive mode, however, can be toggled to achieve a process and exit immediately upon the processes completion. Lastly, the restricted more offers the prompt though only takes a smaller scope of arguments
+.SH ARGUMENTS
+.PP
+In order for the shell to execute commands, the prompt must only be one command long. The shell can take arguements containing the PATH to the command's file. If the PATH isn't given, the shell will find it. Otherwise, if the command's file isn't found in the path, then the shell will search for builtin a.k.a. external function files. Upon discovery, it executes, returns and displays the prompt.
+.PP
+.br
+.B SYNTAX:
+$options -arguments
+.br
+.B EXAMPLE:
+$ls -l
+.br
+or
+.br
+.B EXAMPLE:
+$pwd
+.SH DEFINITIONS
+.PP
+.B end of file (EOF) 
+- signals to the shell that the file is done reading
+.PP
+.B exit status
+- signals to the operating system upon command execution
+.PP
+.B process id (pid)
+- a unique identification given to processes occuring in the shell
+.PP
+.B prompt ($) -
+the character at the beginning of the command line which indicates it can take in user input
+.PP
+.B signal 
+- works with wait, waitpid to execute a variety of different handling 
+.RE
+.PP
+.SH ENVIRONMENTAL VARIABLES
+.PP
+.B env 
+- a warehouse for all possible function files
+.PP
+.B pwd 
+- a variable containing all the current working directory
+.PP
+.B PATH
+- a string containing all paths to functions files, delimited by colons (:)
+.PP
+.SH FUNCTIONS
+.PP
+.B exit
+- function that terminates shell
+.PP
+.B getline
+- function that get user input
+.PP
+.B strtok
+- function that tokenizes a string by specified delimiter; destroys/ alters original string
+.PP
+.SH GLOBAL VARIABLES
+.PP
+.B environ
+- a variable containing an array with all environment variables; works to get env
+.PP
+.SH COMMANDS
+.PP
+.B cd
+- toggles between directories
+.PP
+.B env
+- displays all the environmental variables
+.PP
+.B ls
+- displays the contents of the current working directory
+.PP
+.SH SPECIAL VARIABLES
+.PP
+.B $?
+- contains return value of last executed process
+.PP
+.B $$
+- contains the process identification of the ongoing process
+.PP
+.B $#
+- contains the number of arguments typed into the command line
+.PP
+.B $*
+- contains list of args in the ongoing process
+.SH SYSCALLS
+.PP
+.B execve 
+- ends last process to execute specified process; needs PATH to command file
+.PP
+.B fork
+- creates a parallel process to that of the current process called the child process.
+.PP
+.B getpid
+- attains the process identification number of a child process
+.PP
+.B getppid
+- attains the process identification number of a parent process
+.PP
+.B read 
+- takes a file descriptor from the kernel and read said file
+.PP
+.B signal
+- sends signal to wait, waitpid to inform the process of something
+.PP
+.B wait
+- waits for a child to fully execute
 .SH SEE ALSO
-.br
-.I printf(3), sh(1), echo(1), builtin(1)
+.I pwd(1), cd(1), echo(1), exit(1), execve(2), exit(3), fork(3), signal(3), wait(2), waitpid(2)
 .SH BUGS
-.br
-Some issues may arise when trying to format integers with options %d or %i, when the integer is larger than 99. 
+Some issues may arise when trying to use the env. The user can toggle between being able to use env or exit depending on where the switch case breaks, which determines whether to go into exit or env. Sometimes it grabs the PATH to env from the main terminal, however, no implementation has been introduced.
 .SH AUTHORS
-.br
-Flavio Espinoza, Marcelo Martins
+Flavio Espinoza and Marcelo Martins
