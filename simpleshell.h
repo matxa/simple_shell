@@ -10,7 +10,7 @@
 extern char **environ;
 
 void shell_env(char **args);
-void shell_exit(char **argv);
+int shell_exit(char **argv);
 char *_strchr(char *s, char c);
 int _execute(char **args);
 int n_strlen(char *str);
