@@ -43,4 +43,3 @@ int run(char **args)
 	free(new);
 	return (1);
 }
-
