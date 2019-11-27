@@ -10,7 +10,7 @@ char *user_input(void)
 	int count_char;
 
 	count_char = getline(&buffer, &bsize, stdin);
-	if (count_char == -1)
-		perror("getline() failed ( count_char == -1 )");
+	if (count_char == EOF)
+		exit(0);
 	return (buffer);
 }
