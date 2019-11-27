@@ -21,7 +21,7 @@ char *_getenv(char *var_name)
 				break;
 			}
 		}
-		if ((*char_p == '='))
+		if (*char_p == '=')
 		{
 			return (char_p + 1);
 		}

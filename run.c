@@ -28,9 +28,9 @@ int run(char **args)
 				execve(*args, args, environ);
 
 			new = str_concat(path, cp);
-			if ((access(new, X_OK || R_OK)) == 0)
+			if ((access(new, X_OK | R_OK)) == 0)
 			{
-				execve(new, args, __environ);
+				execve(new, args, environ);
 				break;
 			}
 			path = strtok(NULL, ":");

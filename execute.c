@@ -1,29 +1,39 @@
 #include "simpleshell.h"
+
 /**
- * _execute - filters if builtin or not
- * @args: user input
- * Return: run(cmd)
+ * _printenv - prints environmental variables
+ * Return: (N/A)
  */
 
 void _printenv(void)
 {
-	int i = 0;
-	char *s = *environ;
+	int i;
 
-	for (; i < strlen(*s); i++)
+	for (i = 0; environ[i] != NULL; i++)
 	{
-		printf("%s\n", s);
+		write(1, environ[i], _strlen(environ[i]));
+		write(1, "\n", (sizeof(char) * 2));
 	}
+
 }
 
-/**/
+/**
+* shell_exit - exits the shell
+* @argv: user input
+* Return: exit (EXIT_SUCCESS)
+*/
+
 int shell_exit(char **argv)
 {
 	free(argv);
 	exit(EXIT_SUCCESS);
 }
 
-/**/
+/**
+ * _execute - filters if builtin or not
+ * @args: user input
+ * Return: run(cmd)
+ */
 
 int _execute(char **args)
 {
