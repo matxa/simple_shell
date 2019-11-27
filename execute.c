@@ -4,6 +4,27 @@
  * @args: user input
  * Return: run(cmd)
  */
+
+void _printenv(void)
+{
+	int i = 0;
+	char *s = *environ;
+
+	for (; i < strlen(*s); i++)
+	{
+		printf("%s\n", s);
+	}
+}
+
+/**/
+int shell_exit(char **argv)
+{
+	free(argv);
+	exit(EXIT_SUCCESS);
+}
+
+/**/
+
 int _execute(char **args)
 {
 	int type;
@@ -23,7 +44,7 @@ int _execute(char **args)
 	switch (type)
 	{
 		case (1):
-			_getenv(*args);
+			_printenv();
 			break;
 		case (2):
 			shell_exit(args);
