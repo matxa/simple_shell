@@ -104,3 +104,12 @@ By Marcelo R-M, and Flavio
 - exit and env don't work togther, either or works.(only one can be typed in at the time the shell is running)
 - memory leak
 - Etc...
+
+&#10240;<br>
+<hr>
+&#10240;<br>
+&#10240; &#10240; &#10240; Author: Marcelo Martins<br>
+&#10240; &#10240; &#10240; GitHub: @matxa<br>
+&#10240; &#10240; &#10240; Email: matxa21@gmail.com<br>
+&#10240;
+<hr>
